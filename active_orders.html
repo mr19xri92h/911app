@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="active_orders.css">
+    <title>Отзывы</title>
+</head>
+<body>
+    <h1>Отзывы <span>Porsche posters</span></h1>
+    
+    <div class="todo-container">
+        <div class="add-task">
+            <input type="text" id="task-input" placeholder="Оставить отзыв...">
+            <input type="date" id="task-date">
+            <button onclick="addTask()">Добавить</button>
+        </div>
+        
+        <div class="task-controls">
+            <button onclick="deleteSelected()">Удалить выделенные</button>
+        </div>
+        
+        <div id="tasks-list" class="tasks-list">
+            <!-- Задачи будут добавляться здесь -->
+        </div>
+    </div>
+    
+    <a href="Main.html" class="floating-home-button" title="На главную"></a>
+    <footer>
+        <i>© 2025 | tg: @mr19XRI92H</i>
+    </footer>
+
+    <script src="todo_script.js"></script>
+</body>
+</html>

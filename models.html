@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="models_style.css">
+    <title>PORSCHE 911 Models</title>
+</head>
+<body>
+    <h1>Модельный ряд Porsche 911</h1>
+    
+    <div class="models-container">
+        <!-- Первое поколение -->
+        <div class="model-card" onclick="showDetails('original', 'Original 911 (1964-1973)', 'images/models/original.jpg')">
+            <div class="model-image" style="background-image: url('images/models/original.jpg');"></div>
+            <h3>Original 911 (1964-1973)</h3>
+        </div>
+
+        <!-- G-серия -->
+        <div class="model-card" onclick="showDetails('g-series', 'G-Series (1974-1989)', 'images/models/g-series.jpg')">
+            <div class="model-image" style="background-image: url('images/models/g-series.jpg');"></div>
+            <h3>G-Series (1974-1989)</h3>
+        </div>
+
+        <!-- 964 -->
+        <div class="model-card" onclick="showDetails('964', '964 (1989-1994)', 'images/models/964.jpg')">
+            <div class="model-image" style="background-image: url('images/models/964.jpg');"></div>
+            <h3>964 (1989-1994)</h3>
+        </div>
+
+        <!-- 993 -->
+        <div class="model-card" onclick="showDetails('993', '993 (1994-1998)', 'images/models/993.jpg')">
+            <div class="model-image" style="background-image: url('images/models/993.jpg');"></div>
+            <h3>993 (1994-1998)</h3>
+        </div>
+
+        <!-- 996 -->
+        <div class="model-card" onclick="showDetails('996', '996 (1998-2005)', 'images/models/996.jpg')">
+            <div class="model-image" style="background-image: url('images/models/996.jpg');"></div>
+            <h3>996 (1998-2005)</h3>
+        </div>
+
+        <!-- 997 -->
+        <div class="model-card" onclick="showDetails('997', '997 (2005-2012)', 'images/models/997.jpg')">
+            <div class="model-image" style="background-image: url('images/models/997.jpg');"></div>
+            <h3>997 (2005-2012)</h3>
+        </div>
+
+        <!-- 991 -->
+        <div class="model-card" onclick="showDetails('991', '991 (2012-2019)', 'images/models/991.jpg')">
+            <div class="model-image" style="background-image: url('images/models/991.jpg');"></div>
+            <h3>991 (2012-2019)</h3>
+        </div>
+
+        <!-- 992 -->
+        <div class="model-card" onclick="showDetails('992', '992 (2019-н.в.)', 'images/models/992.jpg')">
+            <div class="model-image" style="background-image: url('images/models/992.jpg');"></div>
+            <h3>992 (2019-н.в.)</h3>
+        </div>
+    </div>
+
+    <div class="details-overlay" id="details-overlay">
+        <div class="details-content">
+            <span class="close-btn" onclick="hideDetails()">&times;</span>
+            <h2 id="detail-title"></h2>
+            <div class="detail-image-container">
+                <img id="detail-image" src="" alt="Porsche 911 Model" class="responsive-image">
+            </div>
+            <div class="detail-text">
+                <p id="detail-description" class="white-text"></p>
+                <ul id="detail-specs" class="white-text"></ul>
+            </div>
+        </div>
+    </div>
+
+    <a href="Main.html" class="floating-home-button" title="На главную"></a>
+    <footer>
+        <i>© 2025 | tg: @mr19XRI92H</i>
+    </footer>
+
+    <script>
+        const modelData = {
+            'original': {
+                description: 'Первое поколение с воздушным охлаждением',
+                specs: [
+                    'Двигатель: 2.0-2.4L оппозитный 6-цилиндровый',
+                    'Мощность: 130-190 л.с.',
+                    'Особенности: Задний привод, механическая КПП'
+                ]
+            },
+            'g-series': {
+                description: 'Легендарная "китобойная" серия',
+                specs: [
+                    'Двигатель: 2.7-3.2L оппозитный 6-цилиндровый',
+                    'Мощность: 150-231 л.с.',
+                    'Особенности: Первый 911 Turbo, аэродинамические обвесы'
+                ]
+            },
+            '964': {
+                description: 'Первая серьезная модернизация',
+                specs: [
+                    'Двигатель: 3.6L оппозитный 6-цилиндровый',
+                    'Мощность: 247-380 л.с.',
+                    'Особенности: Первый полный привод, новая подвеска'
+                ]
+            },
+            '993': {
+                description: 'Последний с воздушным охлаждением',
+                specs: [
+                    'Двигатель: 3.6L оппозитный 6-цилиндровый',
+                    'Мощность: 272-450 л.с.',
+                    'Особенности: Оптимизированная аэродинамика'
+                ]
+            },
+            '996': {
+                description: 'Первое поколение с водяным охлаждением',
+                specs: [
+                    'Двигатель: 3.4-3.6L оппозитный 6-цилиндровый',
+                    'Мощность: 300-450 л.с.',
+                    'Особенности: Радикально новый дизайн'
+                ]
+            },
+            '997': {
+                description: 'Возвращение к классическим линиям',
+                specs: [
+                    'Двигатель: 3.6-3.8L оппозитный 6-цилиндровый',
+                    'Мощность: 325-530 л.с.',
+                    'Особенности: PDK коробка передач'
+                ]
+            },
+            '991': {
+                description: 'Совершенствование технологий',
+                specs: [
+                    'Двигатель: 3.4-3.8L оппозитный 6-цилиндровый',
+                    'Мощность: 350-700 л.с.',
+                    'Особенности: Гибридные технологии'
+                ]
+            },
+            '992': {
+                description: 'Современная классика',
+                specs: [
+                    'Двигатель: 3.0-3.8L оппозитный 6-цилиндровый',
+                    'Мощность: 385-700 л.с.',
+                    'Особенности: 48-вольтовая система, цифровые технологии'
+                ]
+            }
+        };
+
+        function showDetails(modelId, title, imageUrl) {
+            const overlay = document.getElementById('details-overlay');
+            const detailTitle = document.getElementById('detail-title');
+            const detailImage = document.getElementById('detail-image');
+            const detailDescription = document.getElementById('detail-description');
+            const detailSpecs = document.getElementById('detail-specs');
+            
+            // Устанавливаем данные
+            detailTitle.textContent = title;
+            detailImage.src = imageUrl;
+            detailImage.alt = title;
+            
+            const data = modelData[modelId];
+            detailDescription.textContent = data.description;
+            
+            // Очищаем и заполняем спецификации
+            detailSpecs.innerHTML = '';
+            data.specs.forEach(spec => {
+                const li = document.createElement('li');
+                li.textContent = spec;
+                detailSpecs.appendChild(li);
+            });
+            
+            // Показываем оверлей
+            overlay.style.display = 'flex';
+        }
+        
+        function hideDetails() {
+            document.getElementById('details-overlay').style.display = 'none';
+        }
+        
+        // Закрытие при клике вне контента
+        window.onclick = function(event) {
+            const overlay = document.getElementById('details-overlay');
+            if (event.target == overlay) {
+                hideDetails();
+            }
+        }
+    </script>
+</body>
+</html>

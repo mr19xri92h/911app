@@ -1,0 +1,134 @@
+body {
+    background-color: #000000;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial';
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 270;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: rgba(153, 0, 0, 0.392);
+    backdrop-filter: blur(5px);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.orders-container {
+    background-color: rgba(153, 0, 0, 0.392);
+    backdrop-filter: blur(5px);
+    width: 90%;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.orders-table th, .orders-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.orders-table th {
+    background-color: rgba(113, 17, 17, 0.7);
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.orders-table tr:hover {
+    background-color: rgba(113, 17, 17, 0.3);
+}
+
+.floating-home-button {
+    position: fixed;
+    right: 30px;
+    bottom: 65px;
+    width: 60px;
+    height: 60px;
+    background-color: #711111;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+}
+
+.floating-home-button:hover {
+    background-color: #9d1616;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.floating-home-button::before {
+    content: "⌂";
+    font-size: 30px;
+}
+
+footer {
+    background-color: rgba(49, 49, 49, 0.5);
+    color: rgb(220, 220, 220);
+    font-family: 'Arial';
+    font-size: 15px;
+    font-weight: 270;
+    padding: 20px;
+    text-align: right;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px);
+    position: fixed;
+}
+
+@media (max-width: 768px) {
+    .orders-container {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 32px;
+        width: 90%;
+    }
+    
+    .orders-table th, .orders-table td {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .orders-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .orders-table th, .orders-table td {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+}

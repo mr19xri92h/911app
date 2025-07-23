@@ -1,0 +1,245 @@
+body{
+    background-color: #000000;
+    background-image: url('images/background.jpg');
+    background-size: cover;       
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial';
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 270;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: rgba(153, 0, 0, 0.392);
+    backdrop-filter: blur(5px);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.models-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.model-card {
+    background-color: rgba(153, 0, 0, 0.392);
+    color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
+.model-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.model-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.model-card h3 {
+    text-align: center;
+    padding: 15px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.model-details {
+    padding: 0 20px 20px;
+    display: none;
+}
+
+.model-card:hover .model-details {
+    display: block;
+}
+
+.details-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.details-content {
+    background-color: rgba(153, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.details-content h2 {
+    color: #ffffff;
+    margin-top: 0;
+    text-align: center;
+}
+
+.details-content p, .details-content ul {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.details-content ul {
+    padding-left: 20px;
+}
+
+.floating-home-button {
+    position: fixed;
+    right: 30px;
+    bottom: 65px;
+    width: 60px;
+    height: 60px;
+    background-color: #711111;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+}
+
+.floating-home-button:hover {
+    background-color: #9d1616;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.floating-home-button::before {
+    content: "⌂";
+    font-size: 30px;
+}
+
+footer {
+    background-color: rgba(49, 49, 49, 0.5);
+    color: rgb(220, 220, 220);
+    font-family: 'Arial';
+    font-size: 15px;
+    font-weight: 270;
+    padding: 20px;
+    text-align: right;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px);
+
+}
+
+@media (max-width: 768px) {
+    .models-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .details-content {
+        width: 90%;
+    }
+}
+
+.detail-text {
+    color: white; /* Белый цвет текста */
+    padding: 15px 0;
+}
+
+.white-text {
+    color: white !important; /* Гарантированно белый цвет */
+}
+
+.detail-image-container {
+    width: 100%;
+    max-height: 50vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.responsive-image {
+    max-width: 100%;
+    max-height: 50vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Адаптивные стили для модального окна */
+.details-content {
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .detail-image-container {
+        max-height: 30vh;
+    }
+    
+    .responsive-image {
+        max-height: 30vh;
+    }
+    
+    .details-content {
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .detail-image-container {
+        max-height: 25vh;
+    }
+    
+    .responsive-image {
+        max-height: 25vh;
+    }
+    
+    #detail-text p, #detail-text li {
+        font-size: 16px;
+    }
+}

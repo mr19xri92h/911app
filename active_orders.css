@@ -1,0 +1,210 @@
+body {
+    background-color: #000000;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial';
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 270;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: rgba(153, 0, 0, 0.392);
+    backdrop-filter: blur(5px);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+h1 span {
+    color: #ff0000;
+}
+
+.todo-container {
+    background-color: rgba(153, 0, 0, 0.392);
+    backdrop-filter: blur(5px);
+    width: 60%;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.add-task {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-task input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #711111;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 16px;
+}
+
+.add-task button {
+    background-color: #711111;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-task button:hover {
+    background-color: #9d1616;
+}
+
+.task-controls {
+    margin-bottom: 20px;
+}
+
+.task-controls button {
+    background-color: #711111;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.task-controls button:hover {
+    background-color: #9d1616;
+}
+
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-card {
+    background-color: rgba(113, 17, 17, 0.3);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s;
+}
+
+.task-card.completed {
+    opacity: 0.7;
+    background-color: rgba(70, 70, 70, 0.3);
+}
+
+.task-card.completed .task-text {
+    text-decoration: line-through;
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.task-text {
+    flex: 1;
+    color: white;
+}
+
+.task-date {
+    color: #cccccc;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-actions button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.task-actions button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.floating-home-button {
+    position: fixed;
+    right: 30px;
+    bottom: 65px;
+    width: 60px;
+    height: 60px;
+    background-color: #711111;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+}
+
+.floating-home-button:hover {
+    background-color: #9d1616;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.floating-home-button::before {
+    content: "⌂";
+    font-size: 30px;
+}
+
+footer {
+    background-color: rgba(49, 49, 49, 0.5);
+    color: rgb(220, 220, 220);
+    font-family: 'Arial';
+    font-size: 15px;
+    font-weight: 270;
+    padding: 20px;
+    text-align: right;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px);
+    position: fixed;
+}
+
+@media (max-width: 768px) {
+    .todo-container {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 32px;
+        width: 90%;
+    }
+    
+    .add-task {
+        flex-direction: column;
+    }
+}

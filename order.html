@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="order_style.css">
+    <title>Заказ постера Porsche 911</title>
+</head>
+<body>
+    <h1>Заказ постера Porsche 911</h1>
+    
+    <div class="order-container">
+        <form action="process_order.php" method="POST">
+            <div class="form-group">
+                <label for="generation">Выберите поколение:</label>
+                <select id="generation" name="generation" required>
+                    <option value="">-- Выберите поколение --</option>
+                    <option value="Original 911 (1964-1973)">Original 911 (1964-1973)</option>
+                    <option value="G-Series (1974-1989)">G-Series (1974-1989)</option>
+                    <option value="964 (1989-1994)">964 (1989-1994)</option>
+                    <option value="993 (1994-1998)">993 (1994-1998)</option>
+                    <option value="996 (1998-2005)">996 (1998-2005)</option>
+                    <option value="997 (2005-2012)">997 (2005-2012)</option>
+                    <option value="991 (2012-2019)">991 (2012-2019)</option>
+                    <option value="992 (2019-н.в.)">992 (2019-н.в.)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Номер телефона:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="comment">Ваши пожелания:</label>
+                <textarea id="comment" name="comment" rows="4"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Отправить заказ</button>
+        </form>
+    </div>
+    
+    <a href="Main.html" class="floating-home-button" title="На главную"></a>
+    <footer>
+        <i>© 2025 | tg: @mr19XRI92H</i>
+    </footer>
+</body>
+</html>
